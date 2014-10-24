@@ -12,7 +12,6 @@ def load_users(session):
             u.id = int(line[0])
             u.age = int(line[1])
             u.zipcode = line[4]
-            print (u.id, u.age, u.zipcode)
             session.add(u)
 
 
@@ -29,7 +28,6 @@ def load_movies(session):
             u.name = line[1].decode("latin-1")
             if line[2]:
                 u.released_at = datetime.strptime(line[2], "%d-%b-%Y")
-            print(u.released_at)
             u.imdb_url = line[4].decode("latin-1")
             session.add(u)
 
@@ -39,7 +37,6 @@ def load_ratings(session):
         all_ratings = csv.reader(csvfile, delimiter= "\t")
         for line in all_ratings:
             u = model.Rating()
-            print line[0]
             u.user_id = int(line[0])
             u.movie_id = int(line[1])
             u.rating = int(line[2])
@@ -48,8 +45,8 @@ def load_ratings(session):
 
 def main(session):
     # You'll call each of the load_* functions with the session as an argument
-    # load_users(session)
-    #load_movies(session)
+    load_users(session)
+    load_movies(session)
     load_ratings(session)
     session.commit()
 
