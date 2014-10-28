@@ -13,9 +13,6 @@ def load_users(session):
             u.age = int(line[1])
             u.zipcode = line[4]
             session.add(u)
-
-
-
     
 
 def load_movies(session):

@@ -1,0 +1,20 @@
+<html>
+
+<h3>Add a new user</h3>
+<form action="/new_user">
+    <label for="email">Enter email</label>
+    <input type="text" name="email" /><br>
+    <label for="password">Enter password</label>
+    <input type="text" name="password" /><br>
+    <label for "age">Enter age</label>
+    <input type="number" name="age" /><br>
+    <label for "zipcode">Enter zip code</label>
+    <input type="text" name="zipcode" /><br>
+    <input type="submit">
+</form>
+
+
+{% for user in users %}
+<h2>User {{ user.id }}, age {{ user.age }} has {{ user.ratings|length }} ratings </h2>
+{% endfor %}
+</html>
