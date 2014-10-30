@@ -1,0 +1,15 @@
+<html>
+{% extends 'base.html'%}
+
+{%block body%}
+
+{% if prediction %}
+<h3>We predict you will rate this movie {{prediction}}. </h3>
+{% endif %}
+
+{%if beratement %}
+{{beratement}}
+{% endif %}
+
+{% endblock %}
+</html>

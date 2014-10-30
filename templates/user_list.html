@@ -1,5 +1,9 @@
 <html>
 
+{% extends 'base.html'%}
+
+{%block body%}
+
 <h3>Add a new user</h3>
 <form action="/new_user">
     <label for="email">Enter email</label>
@@ -17,4 +21,7 @@
 {% for user in users %}
 <h2>User {{ user.id }}, age {{ user.age }} has {{ user.ratings|length }} ratings </h2>
 {% endfor %}
+
+{% endblock %}
+
 </html>

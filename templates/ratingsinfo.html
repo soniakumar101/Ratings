@@ -1,0 +1,11 @@
+<html>
+{% extends 'base.html'%}
+
+{%block body%}
+
+{%for r in keys%}
+Movie: {{ r }} Rating: {{ info[r]}} <br>
+{%endfor%}
+
+{% endblock %}
+</html>
